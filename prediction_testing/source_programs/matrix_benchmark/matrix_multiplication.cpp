@@ -85,7 +85,7 @@ int main (int argc, char* argv[])
   
 
 	// namespace for timing function
-	using namespace std::chrono;
+	//using namespace std::chrono;
 	
 	// time functions
 	/*    high_resolution_clock::time_point start1 = high_resolution_clock::now();	   
@@ -104,7 +104,7 @@ int main (int argc, char* argv[])
 
 	// run strassen
 	multiply(A, B, C, dim);
-    print_m(C, dim);
+    //print_m(C, dim);
 
     
    	return 0;

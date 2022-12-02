@@ -1,1 +1,29 @@
 export SDKROOT="`xcrun --show-sdk-path`"
+
+
+# hello_world
+clang++ -c -emit-llvm hello_world.cpp -o hello_world.bc
+lli hello_world.bc
+clang++ hello_world.bc -o hello_world
+./executor --num-runs=10 hello_world.bc
+
+# mm
+clang++ -c -emit-llvm matrix_multiplication.cpp -o matrix_multiplication.bc
+lli matrix_multiplication.bc 4
+clang++ matrix_multiplication.bc -o matrix_multiplication
+./executor --use-interpreter --num-runs=10 matrix_multiplication.bc 256             
+
+# bfs
+-std=c++11 -O3 -Wall "-I/opt/homebrew/opt/libomp/include" "-L/opt/homebrew/opt/libomp/lib"
+/Users/estebanramos/projects/compilers/llvm-predictor/build/bin/clang++ $(CXX_FLAGS)  -c -emit-llvm  -flto  $< -o $@.bc
+
+/Users/estebanramos/projects/compilers/llvm-predictor/build/bin/lli -load=/opt/homebrew/opt/libomp/lib/libomp.dylib  bfs.bc -g 10 -n 1
+
+/Users/estebanramos/projects/compilers/llvm-predictor/build/bin/clang++ $(CXX_FLAGS)  bfs.bc -o bfs
+
+
+# inneficient loop
+clang++ -c -emit-llvm inneficient_loop.cpp -o inneficient_loop.bc
+
+# local_value_numbering
+clang++ -c -emit-llvm local_value_numbering.cpp -o local_value_numbering.bc

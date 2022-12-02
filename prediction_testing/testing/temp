@@ -1,0 +1,28 @@
+./executor --num-runs=100 hello_world.bc 
+  25956 ,  24055 ,  90033  
+./executor --num-runs=50  matrix_multiplication.bc -input-arguments= 2 
+  64835 ,  62699 ,  125171  
+./executor --num-runs=50  matrix_multiplication.bc -input-arguments= 4 
+  65486 ,  70851 ,  131948  
+./executor --num-runs=50  matrix_multiplication.bc -input-arguments= 8 
+  65064 ,  62755 ,  145764  
+./executor --num-runs=50  matrix_multiplication.bc -input-arguments= 16 
+  64122 ,  61591 ,  140839  
+./executor --num-runs=50  matrix_multiplication.bc -input-arguments= 32 
+  63952 ,  62118 ,  141936  
+./executor --num-runs=50  matrix_multiplication.bc -input-arguments= 64 
+  65222 ,  64254 ,  137233  
+./executor --num-runs=50  matrix_multiplication.bc -input-arguments= 128 
+  75766 ,  74054 ,  154749  
+./executor --num-runs=50  matrix_multiplication.bc -input-arguments= 256 
+  159276 ,  156486 ,  245112  
+./executor --num-runs=50  matrix_multiplication.bc -input-arguments= 512 
+  866261 ,  846554 ,  948308  
+./executor --num-runs=50  matrix_multiplication.bc -input-arguments= 1024 
+  5975618 ,  5891011 ,  5982380  
+./executor --num-runs=50  matrix_multiplication.bc -input-arguments= 2048 
+  8733607 ,  8777651 ,  8785286  
+./executor --num-runs=100 inneficient_loop.bc 
+  1316834 ,  1317358 ,  1422156  
+./executor --num-runs=100 local_value_numbering.bc 
+  519371 ,  521129 ,  617211  
